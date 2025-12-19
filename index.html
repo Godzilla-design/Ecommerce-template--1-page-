@@ -17,110 +17,111 @@
     <link rel="stylesheet" href="lib/animate/animate.min.css" />
   </head>
   <body>
+    <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
     <!-- Utility Controls -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
       ↑
     </button>
-    <!-- Modern Navigation Bar for ecommerce website starts here -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 custom-navbar fixed-top"
-      data-bs-spy="scroll"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold d-flex align-items-center" href="#home">
-          <img
-            loading="lazy"
-            src="images/logo.png"
-            alt="Logo"
-            width="100"
-            height="80"
-            class="me-2"
-          />
-          ShopEase
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+      🌓
+    </button>
+    <!-- Header: Announcement + Modern Navbar -->
+    <header class="site-header">
+      <div
+        class="announcement-bar fixed-top"
+        id="topbar"
+        role="region"
+        aria-label="Promotions"
+      >
+        <div
+          class="container d-flex justify-content-between align-items-center"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="pagesDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Pages
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <li><a class="dropdown-item" href="#faq">FAQ</a></li>
-                <li>
-                  <a class="dropdown-item" href="#testimonials">Testimonials</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#flashsales">Flash Sales</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#bestselling">Bestselling</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#products">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-          <form class="d-flex me-3" role="search">
-            <input
-              class="form-control me-2 rounded-pill"
-              type="search"
-              placeholder="Search products"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-primary rounded-pill" type="submit">
-              Search
-            </button>
-          </form>
-          <a
-            href="#cart"
-            class="btn btn-primary position-relative rounded-circle"
-            id="cartToggle"
-            aria-label="Toggle cart"
+          <div class="d-flex flex-wrap gap-3 small">
+            <span>🚚 Free shipping over $50</span>
+            <span>↩️ 30-day returns</span>
+            <span>💬 24/7 support</span>
+          </div>
+          <a href="#flashsales" class="link-success text-decoration-none small"
+            >Flash Deals Live →</a
           >
-            <img
-              loading="lazy"
-              src="https://img.icons8.com/ios-filled/24/ffffff/shopping-cart.png"
-              alt="Cart"
-            />
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              id="cartCount"
-              >0</span
-            >
-          </a>
         </div>
       </div>
-    </nav>
+      <nav
+        class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top"
+        data-bs-spy="scroll"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand fw-bold d-flex align-items-center"
+            href="#home"
+          >
+            <img
+              src="images/logo.png"
+              alt="ShopEase"
+              width="32"
+              height="32"
+              class="me-2"
+            />
+            ShopEase
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#products">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#flashsales">Flash Sales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#bestselling">Bestselling</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+            <form class="nav-search d-none d-lg-flex me-3" role="search">
+              <input
+                class="form-control rounded-pill"
+                type="search"
+                placeholder="Search products"
+                aria-label="Search"
+              />
+            </form>
+            <a
+              href="#cart"
+              class="btn btn-primary position-relative rounded-circle"
+              id="cartToggle"
+              aria-label="Toggle cart"
+            >
+              <img
+                loading="lazy"
+                src="https://img.icons8.com/ios-filled/24/ffffff/shopping-cart.png"
+                alt="Cart"
+              />
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                id="cartCount"
+                >0</span
+              >
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <!-- Mini Cart Drawer -->
     <div class="mini-cart" id="miniCart" aria-label="Cart drawer">
@@ -157,29 +158,39 @@
     </div>
 
     <!-- Modern Navigation Bar for ecommerce website ends here -->
-    <!-- Hero section starts here -->
+    <!-- Hero: Modern center stage -->
     <section
       id="home"
       class="hero about-bg-design wow fadeIn"
       data-wow-duration="0.9s"
-      style="padding-top: 88px; position: relative"
     >
-      <div class="about-modern-floating">
-        <span class="shape1"></span>
-        <span class="shape2"></span>
-        <span class="shape3"></span>
-        <span class="shape4"></span>
-      </div>
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-          <div class="col-lg-10 col-xl-8">
-            <span class="hero__eyebrow">Fresh deals daily</span>
-            <h1 class="hero__title">Discover, Shop, and Enjoy</h1>
+        <div class="row justify-content-center text-center">
+          <div class="col-xl-8 col-lg-10">
+            <span class="hero__eyebrow">New drops daily · Free returns</span>
+            <h1 class="hero__title">Elevate Your Everyday</h1>
             <p class="hero__subtitle">
-              Your one-stop destination for trending products, flash sales, and
-              bestselling picks — all curated for you.
+              Bestsellers, flash deals and fresh arrivals — all in one place.
             </p>
+            <form
+              class="hero-search d-none d-md-flex mx-auto mt-3"
+              role="search"
+              aria-label="Search products"
+            >
+              <input
+                class="form-control form-control-lg"
+                type="search"
+                placeholder="Search for sneakers, headphones, bags…"
+                aria-label="Search products"
+              />
+              <button
+                class="btn btn-success btn-lg rounded-pill ms-2"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
             <div class="d-flex gap-3 justify-content-center flex-wrap mt-3">
               <a
                 href="#products"
@@ -189,7 +200,7 @@
               <a
                 href="#flashsales"
                 class="btn btn-outline-success btn-lg rounded-pill px-4"
-                >View Flash Sales</a
+                >View Flash Deals</a
               >
             </div>
           </div>
@@ -197,7 +208,7 @@
       </div>
     </section>
 
-    <!-- Hero section ends here -->
+    <!-- Hero ends here -->
     <!-- About section starts here -->
     <section
       id="about"
@@ -674,8 +685,10 @@
               <div class="card-body text-center">
                 <h6 class="card-title">Headphones Mega Deal</h6>
                 <p class="text-muted">Today only — best price!</p>
-                <a href="#" class="btn btn-success btn-sm rounded-pill"
-                  >Shop Now</a
+                <a
+                  href="#"
+                  class="btn btn-success btn-sm rounded-pill add-to-cart"
+                  >Add to Cart</a
                 >
               </div>
             </div>
@@ -692,8 +705,10 @@
               <div class="card-body text-center">
                 <h6 class="card-title">Smartphone Steal</h6>
                 <p class="text-muted">Top models at lower prices.</p>
-                <a href="#" class="btn btn-success btn-sm rounded-pill"
-                  >Shop Now</a
+                <a
+                  href="#"
+                  class="btn btn-success btn-sm rounded-pill add-to-cart"
+                  >Add to Cart</a
                 >
               </div>
             </div>
@@ -710,8 +725,10 @@
               <div class="card-body text-center">
                 <h6 class="card-title">Buy 1 Get 1 Shoes</h6>
                 <p class="text-muted">Mix and match styles.</p>
-                <a href="#" class="btn btn-success btn-sm rounded-pill"
-                  >Shop Now</a
+                <a
+                  href="#"
+                  class="btn btn-success btn-sm rounded-pill add-to-cart"
+                  >Add to Cart</a
                 >
               </div>
             </div>
@@ -728,8 +745,10 @@
               <div class="card-body text-center">
                 <h6 class="card-title">Backpack Essentials</h6>
                 <p class="text-muted">Perfect for school & travel.</p>
-                <a href="#" class="btn btn-success btn-sm rounded-pill"
-                  >Shop Now</a
+                <a
+                  href="#"
+                  class="btn btn-success btn-sm rounded-pill add-to-cart"
+                  >Add to Cart</a
                 >
               </div>
             </div>
@@ -770,8 +789,10 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                   <span class="price h6 mb-0">$1199</span>
-                  <a href="#" class="btn btn-success btn-sm rounded-pill"
-                    >View</a
+                  <a
+                    href="#"
+                    class="btn btn-success btn-sm rounded-pill add-to-cart"
+                    >Add to Cart</a
                   >
                 </div>
               </div>
@@ -793,8 +814,10 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                   <span class="price h6 mb-0">$199</span>
-                  <a href="#" class="btn btn-success btn-sm rounded-pill"
-                    >View</a
+                  <a
+                    href="#"
+                    class="btn btn-success btn-sm rounded-pill add-to-cart"
+                    >Add to Cart</a
                   >
                 </div>
               </div>
@@ -816,8 +839,10 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                   <span class="price h6 mb-0">$149</span>
-                  <a href="#" class="btn btn-success btn-sm rounded-pill"
-                    >View</a
+                  <a
+                    href="#"
+                    class="btn btn-success btn-sm rounded-pill add-to-cart"
+                    >Add to Cart</a
                   >
                 </div>
               </div>
@@ -839,8 +864,10 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                   <span class="price h6 mb-0">$249</span>
-                  <a href="#" class="btn btn-success btn-sm rounded-pill"
-                    >View</a
+                  <a
+                    href="#"
+                    class="btn btn-success btn-sm rounded-pill add-to-cart"
+                    >Add to Cart</a
                   >
                 </div>
               </div>
@@ -962,7 +989,9 @@
               "
             >
               <div class="card-body p-4 p-lg-5">
-                <h2 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                <h2
+                  class="fw-bold mb-3 d-flex align-items-center gap-2 text-success"
+                >
                   <img
                     src="https://img.icons8.com/ios-filled/32/34d399/secured-letter.png"
                     alt="Contact"
@@ -981,7 +1010,7 @@
                       type="text"
                       class="form-control"
                       id="contactName"
-                      placeholder="Your full name"
+                      placeholder=""
                       required
                     />
                     <label
@@ -1000,7 +1029,7 @@
                       type="email"
                       class="form-control"
                       id="contactEmail"
-                      placeholder="you@example.com"
+                      placeholder=""
                       required
                     />
                     <label
@@ -1402,6 +1431,124 @@
 
       wow.init();
 
+      // Theme toggle
+      const THEME_KEY = "shopease_theme";
+      const htmlEl = document.documentElement;
+      const themeToggleBtn = document.getElementById("themeToggle");
+      const applyTheme = (mode) => {
+        if (mode === "dark") {
+          htmlEl.setAttribute("data-theme", "dark");
+          themeToggleBtn.textContent = "☀️";
+        } else {
+          htmlEl.removeAttribute("data-theme");
+          themeToggleBtn.textContent = "🌓";
+        }
+      };
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      applyTheme(savedTheme === "dark" ? "dark" : "light");
+      themeToggleBtn.addEventListener("click", () => {
+        const next =
+          htmlEl.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        localStorage.setItem(THEME_KEY, next);
+        // Smooth theme transition
+        htmlEl.classList.add("theme-transition");
+        applyTheme(next);
+        setTimeout(() => htmlEl.classList.remove("theme-transition"), 260);
+      });
+
+      // Scroll progress bar
+      const progressEl = document.getElementById("scrollProgress");
+      const updateProgress = () => {
+        const scrollTop = window.scrollY;
+        const docH = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+        const winH = window.innerHeight;
+        const max = Math.max(1, docH - winH);
+        const pct = Math.min(1, scrollTop / max);
+        progressEl.style.transform = `scaleX(${pct})`;
+      };
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("load", updateProgress);
+
+      // Hero parallax
+      const hero = document.querySelector(".hero");
+      const heroBg = document.querySelector(".hero__bg");
+      let hx = 0,
+        hy = 0,
+        rafId = null;
+      const applyHeroParallax = () => {
+        if (!heroBg) return;
+        heroBg.style.transform = `translate3d(${hx}px, ${hy}px, 0)`;
+        rafId = null;
+      };
+      hero?.addEventListener("pointermove", (e) => {
+        const rect = hero.getBoundingClientRect();
+        const cx = (e.clientX - rect.left) / rect.width - 0.5;
+        const cy = (e.clientY - rect.top) / rect.height - 0.5;
+        hx = cx * 20; // subtle
+        hy = cy * 14;
+        if (!rafId) rafId = requestAnimationFrame(applyHeroParallax);
+      });
+      window.addEventListener(
+        "scroll",
+        () => {
+          // Slight vertical parallax on scroll
+          const sy = window.scrollY * 0.05;
+          hy = sy % 16;
+          if (!rafId) rafId = requestAnimationFrame(applyHeroParallax);
+        },
+        { passive: true }
+      );
+
+      // Product card tilt interaction
+      const cards = document.querySelectorAll(".product-card");
+      cards.forEach((card) => {
+        let req = null;
+        let rx = 0,
+          ry = 0;
+        const updateTilt = () => {
+          card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+          req = null;
+        };
+        card.addEventListener("pointermove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          ry = x * 6;
+          rx = -y * 6;
+          if (!req) req = requestAnimationFrame(updateTilt);
+        });
+        card.addEventListener("pointerleave", () => {
+          rx = 0;
+          ry = 0;
+          if (!req) req = requestAnimationFrame(updateTilt);
+        });
+        card.addEventListener("pointerenter", () => {
+          card.style.transition = "transform 120ms ease";
+        });
+      });
+
+      // Button ripple micro-interaction
+      const createRipple = (e) => {
+        const btn = e.currentTarget;
+        const rect = btn.getBoundingClientRect();
+        const circle = document.createElement("span");
+        const d = Math.max(rect.width, rect.height);
+        circle.className = "ripple";
+        circle.style.width = circle.style.height = `${d}px`;
+        circle.style.left = `${e.clientX - rect.left - d / 2}px`;
+        circle.style.top = `${e.clientY - rect.top - d / 2}px`;
+        btn.appendChild(circle);
+        setTimeout(() => circle.remove(), 600);
+      };
+      document.querySelectorAll(".btn").forEach((b) => {
+        b.style.position = b.style.position || "relative";
+        b.style.overflow = b.style.overflow || "hidden";
+        b.addEventListener("click", createRipple);
+      });
+
       // Smooth scrolling for internal links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -1499,6 +1646,33 @@
       const scrollSpy = new bootstrap.ScrollSpy(document.body, {
         target: "#navbarNav",
         offset: 100,
+      });
+
+      // Ensure hero content isn't hidden behind fixed topbar+navbar
+      const topbarEl = document.getElementById("topbar");
+      const navbarEl = document.querySelector(".custom-navbar");
+      const heroEl = document.getElementById("home");
+      const adjustLayoutForHeader = () => {
+        const headerH =
+          (topbarEl?.offsetHeight || 0) + (navbarEl?.offsetHeight || 0);
+        if (heroEl) {
+          heroEl.style.paddingTop = `${headerH + 24}px`;
+          heroEl.style.minHeight = `calc(100vh - ${headerH}px)`;
+        }
+        document.querySelectorAll("section").forEach((s) => {
+          s.style.scrollMarginTop = `${headerH + 20}px`;
+        });
+        // Update ScrollSpy offset to match dynamic header height
+        try {
+          scrollSpy._config.offset = headerH + 20;
+          scrollSpy.refresh();
+        } catch {}
+      };
+      window.addEventListener("load", adjustLayoutForHeader);
+      window.addEventListener("resize", () => {
+        // Debounce resize
+        clearTimeout(window.__hdrTimer);
+        window.__hdrTimer = setTimeout(adjustLayoutForHeader, 100);
       });
 
       // Add to Cart (front-end demo)
@@ -1617,10 +1791,15 @@
       document.querySelectorAll(".add-to-cart").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           e.preventDefault();
-          const card = btn.closest(".product-card");
+          const card = btn.closest(".product-card, .sale-card");
           const name =
-            card?.querySelector(".card-title")?.textContent?.trim() || "Item";
-          const priceText = card?.querySelector(".price")?.textContent || "$0";
+            card?.querySelector(".card-title")?.textContent?.trim() ||
+            btn.getAttribute("data-name") ||
+            "Item";
+          const priceText =
+            card?.querySelector(".price")?.textContent ||
+            btn.getAttribute("data-price") ||
+            "$0";
           const price = Number(priceText.replace(/[^0-9.]/g, "")) || 0;
 
           const existing = cart.find((p) => p.name === name);
